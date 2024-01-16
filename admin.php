@@ -59,10 +59,65 @@
 
         <!-- section start -->
         <div class="section">
-            <div class="header">
+            <div class="section-1">
                 <h2 id="head-pos">Dashboard</h2>
                 <p>Menu > Dashboard</p>
             </div>
+            <div class="section-2">
+                <div class="card">
+                    <div class="img">
+                        <img src="assets/male.png" alt="" class="big">
+                    </div>
+                    <div class="text">
+                        <p>SISWA LAKI-LAKI</p>
+                        <p id="jumlahlaki"><b>12</b></p>
+                    </div>
+                </div>
+                <div class="card" style="background-color:#3D8CBC;">
+                    <div class="img" style="background-color: #317297;">
+                        <img src="assets/male-and-female.png" alt="" class="big">
+                    </div>
+                    <div class="text">
+                        <p>TOTAL SISWA</p>
+                        <p id="jumlahsiswa"><b>12</b></p>
+                    </div>
+                </div>
+                <div class="card" style="background-color: #00A55B;">
+                    <div class="img" style="background-color: #008549;">
+                        <img src="assets/female.png" alt="" class="big">
+                    </div>
+                    <div class="text">
+                        <p>SISWA PEREMPUAN</p>
+                        <p id="jumlahperem"><b>12</b></p>
+                    </div>
+                </div>
+            </div>
+                <div class="section-3">
+                    <div class="bg-table">
+                        <div class="header">
+                            <div class="header-left">
+                                <div class="header-left-top">
+                                    <img src="assets/mortarboard.png" alt="" class="big">
+                                    <h1>TABEL SISWA</h1>
+                                </div>
+                                <div class="header-left-bottom">
+                                    <h3>Show</h3>
+                                    <select name="number" id="number"></select>
+                                    <h3>entries</h3>
+                                </div>
+                            </div>
+                            <div class="header-right">
+                                <div class="header-right-top">
+                                    <button>Tambah Siswa</button>
+                                </div>
+                                <div class="header-right-bottom">
+                                    <input type="search" id="srch" name="srch" placeholder="Search...">
+                                    <button>OO</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
         <!-- section end -->
 
