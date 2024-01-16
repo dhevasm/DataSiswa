@@ -43,7 +43,7 @@
         <!-- navbar start -->
         <div class="navbar">
             <div class="hamburger">
-                <img src="assets/menu.png" alt="=" class="icon">
+                <img src="assets/menu.png" alt="=" class="icon" id="hamburger">
             </div>
             <div class="profile">
                 <div class="photo-profile">
@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="header-left-bottom">
                                     <h3>Show</h3>
-                                    <select name="number" id="number"></select>
+                                    <select name="number" id="number" style="margin-right: 10px;"></select>
                                     <h3>entries</h3>
                                 </div>
                             </div>
@@ -116,6 +116,18 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- table start -->
+                        <table border="1" style="border-collapse: collapse;"> 
+                            <tr>
+                                <th>NIS</th>
+                                <th>Nama</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
+                                <th>Action</th>
+                            </tr>
+                        </table>
+                        <!-- table end -->
                     </div>
                 </div>
         </div>
