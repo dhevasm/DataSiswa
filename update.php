@@ -1,0 +1,114 @@
+<?php 
+    require "function.php";
+
+    $nis = $_GET["nis"];
+
+    $query = mysqli_query($connect, "SELECT * FROM tb_siswa WHERE nis = '$nis'");
+    $data = mysqli_fetch_assoc($query);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Siswa | Edit</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    body{
+        background-color: #999;
+    }
+    .tambah-data{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 650px;
+    padding: 25px;
+    height: 350px;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px #999;
+    z-index: 9999;
+    transition: 1s;
+    input{
+        width: 300px;
+        padding: 10px 20px;
+    }
+    .genderinput{
+        width: 10px;
+
+    }
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 10%;
+        button{
+            padding: 10px 20px;
+        }
+    }
+}
+.hoverpointer:hover{
+    cursor: pointer;
+}
+</style>
+<body>
+<div class="tambah-data">
+            <div style="margin-bottom: 20px; display: flex; justify-content: space-between;">
+                <h2>Edit data <?= $nis ?></h2>
+                <h2 id="closeinput" class="hoverpointer">X</h2>
+            </div>
+            <form method="post" action="" class="tambah-data-input">
+                <div>
+                    <label for="nis">NIS:</label>
+                    <input type="text" name="nis" id="nis" value="<?= $data["nis"]; ?>" inputmode="numeric" autofocus required>
+                </div>
+                <div>
+                    <label for="nama">Name:</label>
+                    <input type="text" name="nama" id="nama" value="<?= $data["nama"]; ?>" required>
+                </div>
+                <div>
+                    <label for="tgllahir">Tanggal lahir:</label>
+                    <input type="date" name="tgllahir" id="tgllahir" value="<?= $data["tgllahir"]; ?>" required>
+                </div>
+                <div style="align-self: start; display: flex; gap: 10px; margin-left: 23%;">
+                    <p>Jenis Kelamin:</p>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; gap: 10px;">
+                        <input type="radio" name="gender" id="laki" value="Laki-laki" class="genderinput" 
+                        <?= ($data["gender"] == 'Laki-laki') ? "checked" : ""; ?>>
+                        <label for="laki">Laki - laki</label>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="radio" name="gender" id="perempuan" value="Perempuan" class="genderinput" 
+                        <?= ($data["gender"] == 'Perempuan') ? "checked" : ""; ?>>
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="alamat">Alamat:</label>
+                    <input type="text" name="alamat" id="alamat" value="<?= $data["alamat"]; ?>" required>
+                </div>
+                <button name="simpan" id="simpan">Simpan</button>
+            </form>
+            <?php 
+                if(isset($_POST["simpan"])){
+                    edit($_POST);
+                }
+            ?>
+
+        </div>
+        <script>
+            document.querySelector("#closeinput").addEventListener("click", () =>{
+                window.location.href = "admin.php";
+            });
+        </script>
+</body>
+</html>

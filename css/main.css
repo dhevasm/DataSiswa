@@ -16,6 +16,7 @@ body{
     position: fixed;
     z-index: 20;
     color: #ffff;
+    transition: 0.5s;
     .brand{
         display: flex;
         gap: 10px;
@@ -23,6 +24,9 @@ body{
         justify-content: center;
         padding: 16.5px 0px;
         background-color: #377EA9;
+        h1{
+            text-wrap: nowrap;
+        }
     }
     .side-search{
         margin: 20px;
@@ -37,17 +41,25 @@ body{
             font-size: 15px;
         }
     }
+    .photo-profile{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .side-search{
+        width: 80%;
+    }
     .side-menu{
         .menu{
             background-color: #192227;
             width: 100%;
             height: 50px;
             display: flex;
-            justify-content: start;
+            justify-content:center;
             align-items: center;
             border-radius: 10px;
             p{
-                margin: 20px;
                 opacity: 30%;
             }
         }
@@ -103,12 +115,22 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 0.5s;
+    .hamburger{
+        transition: 0.3s;
+    }
+    .hamburger:hover{
+        opacity: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 }
 .section{
     width: 80%;
-    height: 120vh;
+    height: 150vh;
     padding-top: 10vh;
     float: right;   
+    transition: 0.5s;
 
     .section-1{
         display: flex;
@@ -123,7 +145,7 @@ body{
         display: flex;
         justify-content: space-around;
         .card{
-            width: 330px;
+            width: 30%;
             height: 90px;
             background-color: #DD4B38;
             display: flex;
@@ -157,6 +179,37 @@ body{
             border-top: 6px solid #349976;
             border-top-right-radius: 5px;
             border-top-left-radius: 5px;
+            .table{
+                margin-top: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                table{
+                    width: 95%;
+                }
+                a{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                    outline: none;
+                    border: none;
+                    border-radius: 10px;
+                    transition: 0.3s;
+                }
+                a:hover{
+                    opacity: 50%;
+                    transition: 0.3s;
+                }
+                .data-delete{
+                    background-color: #DD4B38;
+                }
+                .data-update{
+                    background-color: #3D8CBC;
+                }
+            }
         }
         .header{
             display: flex;
@@ -229,7 +282,7 @@ body{
                     button{
                         outline: none;
                         border: none;
-                        padding: 10px;
+                        padding: 7px;
                         background-color: #00A55D;
                         border-radius: 5px;
                         color: #fff;
@@ -252,6 +305,47 @@ body{
     float: right;
     background-color: aliceblue;
 }
+
+.tambah-data{
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 650px;
+    padding: 25px;
+    height: 350px;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px #999;
+    z-index: 9999;
+    transition: 1s;
+    input{
+        width: 300px;
+        padding: 10px 20px;
+    }
+    .genderinput{
+        width: 10px;
+
+    }
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 10%;
+        button{
+            padding: 10px 20px;
+        }
+    }
+}
+.tambah-data-muncul{
+    top: 50%;
+    transition: 1s;
+}
+.hoverpointer:hover{
+    cursor: pointer;
+}
+
 .profile{
     display: flex;
     gap: 10px;
@@ -262,7 +356,7 @@ body{
     }
 }
 .side{
-    margin: 40px;
+    margin-top: 40px;
 }
 
 .icon{
@@ -279,3 +373,36 @@ body{
     width: 70px;
     height: 70px;
 }
+
+.small{
+    width: 20px;
+    height: 20px;
+}
+
+th, td{
+    padding: 5px 10px;
+    text-align: start;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+    background-color: #ffff;
+}
+
+.popupshow{
+    width: 5%;
+    transition: 0.5s;
+}
+
+.navbarshow{
+    width: 95%;
+    transition: 0.5s;
+}
+
+.sideicon{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
