@@ -2,13 +2,14 @@
     require "function.php";
 
     $nis = $_GET["nis"];
+    $page = $_SESSION["page"];
 
     if(isset($_POST["yes"])){
         mysqli_query($connect, "DELETE FROM tb_siswa WHERE nis = '$nis'");
-        header("Location:admin.php");
+        header("Location:admin.php?page=$page");
     }
     if(isset($_POST["no"])){
-        header("Location:admin.php");
+        header("Location:admin.php?page=$page");
     }
 ?>
 <!DOCTYPE html>
@@ -53,9 +54,20 @@
     <h1>Yakin ingin menghapus data <?= $nis ?>?</h1>
     <div>
         <form action="" method="post">
-            <button name="yes" style="background-color: #349976;">Yes</button>
-            <button name="no" style="background-color: #DD4B38;">No</button>
+            <button name="yes" id="yes" style="background-color: #349976;">Yes</button>
+            <button name="no" id="no" style="background-color: #DD4B38;">No</button>
         </form>
     </div>
+
+    <script>
+        document.body.addEventListener("keydown", (e) =>{
+            if(e.key == "Enter"){
+                document.querySelector("#yes").click();
+            }
+            if(e.key == "Escape"){
+                document.querySelector("#no").click();
+            }
+        });
+    </script>
 </body>
 </html>

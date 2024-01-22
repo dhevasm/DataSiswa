@@ -31,7 +31,7 @@ body{
     .side-search{
         margin: 20px;
         input{
-            width: 220px;
+            width: 100%;
             padding: 8px 10px;
             border-radius: 5px;
             border: none;
@@ -127,7 +127,7 @@ body{
 }
 .section{
     width: 80%;
-    height: 150vh;
+    height: 100%;
     padding-top: 10vh;
     float: right;   
     transition: 0.5s;
@@ -300,17 +300,56 @@ body{
    
 }
 .footer{
+    margin-top: 20px;
     width: 80%;
-    height: 30vh;
+    height: 20vh;
     float: right;
-    background-color: aliceblue;
+    background-color: #fff;
+}
+
+
+.chart{
+    width: 80%;
+    height: 100%;
+    padding-top: 10vh;
+    float: right;   
+    transition: 0.5s;
+    display: none;
+    .section-1-chart{
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin: 25px;
+        p{
+            font-size: 12px;
+        }
+    }
+    .section-2-chart{
+        display: flex;
+        .diagram{
+            width: 45%;
+            margin: 0 3% 7% 3%;
+            height: 500px;
+            background-color: #fff;
+        }
+        .long{
+            border-top: 5px solid #00A55D;
+            border-top-right-radius: 5px ;
+            border-top-left-radius: 5px;
+        }
+        .pie{
+            border-top: 5px solid #DD4B38;
+            border-top-right-radius: 5px ;
+            border-top-left-radius: 5px;
+        }
+    }
 }
 
 .tambah-data{
     position: fixed;
     top: -100%;
     left: 50%;
-    transform: translate(-50%, -80%);
+    transform: translate(-50%, -75%);
     width: 650px;
     padding: 25px;
     height: 350px;
@@ -348,13 +387,50 @@ body{
 
 .profile{
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
     .photo-profile{
         display: flex;
         color: #ffff;
         align-items: center;
     }
 }
+.photo-profile:hover{
+    cursor: pointer;
+}
+
+.profile-card{
+    position: fixed;
+    top: 0;
+    margin-top: 70px;
+    right: 0;
+    width: 250px;
+    height: 150px;
+    background-color: #377EA9;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    button{
+        outline: none;
+        border: none;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    button:hover{
+        cursor: pointer;
+        opacity: 75%;
+    }
+}
+
+.displaynone{
+    display: none;
+}
+
 .side{
     margin-top: 40px;
 }
@@ -406,3 +482,11 @@ tr:nth-child(odd) {
     margin-left: 20px;
 }
 
+.pagination{
+    margin: 20px;
+   a{
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+   }
+}

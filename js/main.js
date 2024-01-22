@@ -37,6 +37,9 @@ ham.addEventListener("click", () =>{
     const section = document.querySelector(".section");
     section.classList.toggle("navbarshow");
 
+    const chart = document.querySelector(".chart");
+    chart.classList.toggle("navbarshow");
+    
     const footer = document.querySelector(".footer");
     footer.classList.toggle("navbarshow");
     
@@ -57,4 +60,22 @@ openinput.forEach(e =>{
         const popupinput = document.querySelector(".tambah-data");
         popupinput.classList.add("tambah-data-muncul");
     });
+});
+
+
+const dashboard = document.querySelector("#dashboardbutton");
+const chart = document.querySelector("#chartbutton");
+
+dashboard.addEventListener("click", (e) =>{
+    e.preventDefault();
+    document.querySelector(".section").style.display = "block";
+
+    document.querySelector(".chart").style.display = "none";
+});
+
+chart.addEventListener("click", (e) =>{
+    e.preventDefault();
+    document.querySelector(".section").style.display = "none";
+
+    document.querySelector(".chart").style.display = "block";
 });
