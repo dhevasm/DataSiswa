@@ -22,7 +22,7 @@
     body{
         background-color: #999;
     }
-    .edit-data{
+    .tambah-data{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -57,9 +57,10 @@
     #closeinput:hover{
         cursor: pointer;
     }
+    <?php include "css/mobile.css" ?>
 </style>
 <body>
-<div class="edit-data">
+<div class="tambah-data">
             <div style="margin-bottom: 20px; display: flex; justify-content: space-between;">
                 <h2>Edit Data Siswa <?= $data["nis"]; ?></h2>
                 <h2 id="closeinput" class="<?= $page ?>">X</h2>
@@ -109,6 +110,9 @@
             <?php 
                 if(isset($_POST["simpan"])){
                     edit($_POST);
+                    echo "<script>
+                        window.location.href='admin.php?page=$page';
+                    </script>";
                 }
             ?>
         </div>

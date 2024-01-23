@@ -24,7 +24,7 @@ ham.addEventListener("click", () =>{
         sidemin = true;
     }else{
         setTimeout(() => {
-            brand.innerHTML = "<h1>Data Siswa</h1>";
+            brand.innerHTML = "<h1>Data</h1><h1 style='font-weight: lighter;'>Siswa</h1>";
             search.style.display = "block";
             sidename.style.display = "block";
             sidetext.forEach(e => {
@@ -45,6 +45,7 @@ ham.addEventListener("click", () =>{
     
     const sideimg = document.querySelector("#side-account-img");
     sideimg.classList.toggle("big");
+
 });
 
 const closeinput = document.querySelector("#closeinput");
@@ -78,4 +79,17 @@ chart.addEventListener("click", (e) =>{
     document.querySelector(".section").style.display = "none";
 
     document.querySelector(".chart").style.display = "block";
+});
+
+const mobileclose = document.querySelector(".close-side-mobile");
+mobileclose.addEventListener("click", () =>{
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.remove("popupshow");
+    
+    const sideimg = document.querySelector("#side-account-img");
+    sideimg.classList.add("big");
+
+    const chart = document.querySelector(".chart");
+    chart.classList.add("navbarshow");
+    sidemin = false;
 });

@@ -2,7 +2,10 @@
     $connect = mysqli_connect("Localhost", "root", "", "db_datasiswa");
 
     session_start();
-    $page = $_SESSION["page"];
+    $page = 1;
+    if(isset($_SESSION["page"])){
+        $page = $_SESSION["page"];
+    }
 
     function upload($data){
         global $connect;
@@ -27,6 +30,5 @@
         mysqli_query($connect, "UPDATE tb_siswa SET nis = '$nis', nama = '$nama', 
         tgllahir = '$tgllahir', gender = '$gender', alamat = '$alamat' 
         WHERE nis = '$nis'");
-        header("Location:admin.php?page=$page");
     }
 ?>

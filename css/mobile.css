@@ -1,0 +1,63 @@
+@media (max-width:800px){
+    .section-2{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .card{
+        padding: 0 60% 0 0;
+        .img{
+            padding: 0 30%;
+        }
+    }
+    .section-2-chart{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .diagram{
+            padding: 0 20%;
+        }
+    }
+    .sidebar{
+        width: 50vw;
+        right: 150%;
+    }
+    .navbar, .section, .footer{
+        width: 100%; 
+    }
+    table{
+        font-size: small;
+    }
+    .actionmenu{
+        flex-direction: column;
+    }
+    .header{
+        h1, h2, h3{
+            font-size: medium;
+        }
+        .header-right-bottom{
+            input{
+                width: 150px;
+                height: 30px;
+            }
+        }
+    }
+    .tambah-data{
+        width: 90%;
+        height: 400px;
+        input{
+            width: 250px;
+        }
+    }
+    .popupshow{
+        left: 0;
+    }
+    .close-side-mobile{
+        display: block;
+    }
+    .sidetextmobile{
+        display: block;
+    }
+    table{
+        margin-left: 100px;
+    }
+}

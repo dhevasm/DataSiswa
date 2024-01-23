@@ -33,6 +33,7 @@
 </head>
 <style>
     <?php include "css/main.css" ?>
+    <?php include "css/mobile.css" ?>
 </style>
 <body> 
     <div class="fcontainer">
@@ -42,6 +43,7 @@
                 <h1>Data</h1>
                 <h1 style="font-weight: lighter;">Siswa</h1>
             </div>
+            <h1 class="close-side-mobile">X</h1>
             <div class="profile side">
                 <div class="photo-profile">
                     <img src="assets/pp.png" alt="photoprofil..." class="icon pp big" id="side-account-img">
@@ -58,9 +60,12 @@
                     <p>Menu</p>
                 </div>
                 <ul>
-                    <li class="hoverpointer" id="dashboardbutton"><img src="assets/dashboard-512.png" alt="db" class="sideicon"><a href="" class="sidetext">Dashboard</a></li>
-                    <li class="hoverpointer" id="chartbutton"><img src="assets/pie-chart-512.png" alt="ch" class="sideicon"><a href="" class="sidetext">Chart</a></li>
-                    <li class="openinput hoverpointer"><img src="assets/plus-512.png" alt="+" class="sideicon"><a href="" class="sidetext">Tambah Siswa</a></li>
+                    <li class="hoverpointer" id="dashboardbutton"><img src="assets/dashboard-512.png" alt="db" class="sideicon"><a href="" class="sidetext">Dashboard</a>
+                    <a href="" class="sidetextmobile">Dashboard</a></li>
+                    <li class="hoverpointer" id="chartbutton"><img src="assets/pie-chart-512.png" alt="ch" class="sideicon"><a href="" class="sidetext">Chart</a>
+                    <a href="" class="sidetextmobile">Chart</a></li>
+                    <li class="openinput hoverpointer"><img src="assets/plus-512.png" alt="+" class="sideicon"><a href="" class="sidetext">Tambah Siswa</a>
+                    <a href="" class="sidetextmobile">Tambah Siswa</a></li>
                 </ul>
             </div>
         </div>
@@ -137,10 +142,10 @@
                                 </div>
                                 <div class="header-left-bottom">
                                     <h3>Show</h3>
-                                        <select name="rowperpage" id="number" style="margin-right: 10px;">
+                                        <select name="rowperpage" id="number" style="margin-right: 5px;">
                                             <option value="10">10</option>
-                                            <option value="15">15</option>
-                                            <option value="20">20</option>
+                                            <!-- <option value="15">15</option>
+                                            <option value="20">20</option> -->
                                         </select>
                                     <h3>entries</h3>
                                 </div>
@@ -172,7 +177,7 @@
                         
 
                         <!-- table start -->
-                        <div class="table">
+                        <div class="table" style="overflow-x:scroll;">
 
                             <table border="1px solid #9999" style="border-collapse: collapse;"> 
                                 <tr>
@@ -193,7 +198,7 @@
                                             <td><?= $row["gender"]  ?></td>
                                             <td><?= $row["alamat"]  ?></td>
                                             <td>
-                                                <div style="display: flex; justify-content: space-evenly;">
+                                                <div class="actionmenu" style="display: flex; justify-content: space-evenly;">
                                                     <a href="update.php?nis=<?= $row['nis']; ?>" class="data-update"><img src="assets/pencil-512.png" alt="change" class="small"></a>
                                                     <a href="delete.php?nis=<?= $row['nis']; ?>" class="data-delete"><img src="assets/x-mark-512.png" alt="X" class="small"></a></td>
                                                 </div>
@@ -259,7 +264,7 @@
             </div>
             <div class="section-2-chart">
                 <div class="pie diagram">
-                    <div>
+                    <div style="display: flex; justify-content: center;">
                     <canvas id="myChart"></canvas>
                     </div>
 
@@ -281,10 +286,16 @@
                         }]
                         },
                         options: {
-                        scales: {
-                           
-                        }
-                        }
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
+                                }
+                            }
                     });
                     </script>
                 </div>
@@ -336,11 +347,15 @@
                             }]
                             },
                             options: {
-                            scales: {
-                                y: {
-                                beginAtZero: true
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
                                 }
-                            }
                             }
                         });
                     </script>
